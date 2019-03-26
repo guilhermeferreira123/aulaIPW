@@ -2,7 +2,7 @@
 	include_once("Noticia.php");
 	$objetoNoticia = new Noticia();
 	print_r($_POST);
-	Array ( [titulo] => curso tecnico [autor] => guilherme [dataPublicacao] => 2018-08-10 [descricao] => estou fazendo um test. )
+	//Array ( [titulo] => curso tecnico [autor] => guilherme [dataPublicacao] => 2018-08-10 [descricao] => estou fazendo um test. )
  if (filter_input(INPUT_POST,"titulo")&&
 	  filter_input(INPUT_POST,"descricao")&&
 	  filter_input(INPUT_POST,"autor")&&

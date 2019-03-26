@@ -23,6 +23,13 @@
 			public function setCurso($curso){
 			$this->curso = $curso;
 			}
+			public function setId($id){
+				$this->id = $id;
+			}
+			public function setSituacao($situacao){
+				$this->situacao = $situacao;
+				}
+			
 			
 			public function getTitulo(){
 				return $this->titulo;
@@ -38,6 +45,12 @@
 				}
 				public function getCurso(){
 					return $this->curso;
+				}
+				public function getId(){
+					return $this->id;
+				}
+				public function getStuacao(){
+					return $this->situacao;
 				}
 				
 		
@@ -78,7 +91,15 @@
 			}
 		}
 		public function alterar($dados){}
-		public function excluir($id){}
+		public function ativarInativar($id,$situacao) {
+			$this->setId($id);
+			$this->setSituacao($situacao);
+			
+			$sql = "update noticia set ativo=" . $this->getsituacao . " where id=" . $this->getid();
+				$conectar = new mysqli("localhost","root","","noticialisboa");
+				$executar = $conectar->query($sql);
+		
+		}
 		public function buscarUm($id){}
 		public function buscarTodos(){
 		$sql = "SELECT * FROM noticia ORDER BY id ASC";
